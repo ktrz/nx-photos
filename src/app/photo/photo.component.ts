@@ -14,11 +14,19 @@ import {Photo} from './photo';
       </mat-card-content>
       <mat-card-actions align="end">
         <button mat-icon-button color="warn" (click)="onLike()">
-          <ng-container *ngIf="photo.likes as likes; else notLikedButton">
-            <mat-icon [matBadge]="likes" matBadgeColor="warn" color="primary">favorite</mat-icon>
+          <ng-container *ngIf="photo.likes > 0; else notLikedButton">
+            <mat-icon [matBadge]="photo.likes" matBadgeColor="warn" color="primary">thumb_up</mat-icon>
           </ng-container>
           <ng-template #notLikedButton>
-            <mat-icon color="primary">favorite_outline</mat-icon>
+            <mat-icon color="primary">thumb_up_off_alt</mat-icon>
+          </ng-template>
+        </button>
+        <button mat-icon-button (click)="onDislike()">
+          <ng-container *ngIf="photo.likes < 0; else notDislikedButton">
+            <mat-icon [matBadge]="-photo.likes" matBadgeColor="warn" color="primary">thumb_down</mat-icon>
+          </ng-container>
+          <ng-template #notDislikedButton>
+            <mat-icon color="primary">thumb_down_off_alt</mat-icon>
           </ng-template>
         </button>
       </mat-card-actions>
@@ -31,8 +39,13 @@ export class PhotoComponent {
   @Input() photo?: Photo | null;
 
   @Output() like = new EventEmitter();
+  @Output() dislike = new EventEmitter();
 
   onLike(): void {
     this.like.next();
+  }
+
+  onDislike(): void {
+    this.dislike.next();
   }
 }

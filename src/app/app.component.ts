@@ -1,13 +1,13 @@
 import {Component} from '@angular/core';
 import {select, Store} from '@ngrx/store';
 import {selectPhoto} from './store/photo.selectors';
-import {likePhoto} from './store/photo.actions';
+import {dislikePhoto, likePhoto} from './store/photo.actions';
 
 @Component({
   selector: 'app-root',
   template: `
     <div class="photos">
-      <app-photo class="photo" [photo]="photo$ | async" (like)="onLike()"></app-photo>
+      <app-photo class="photo" [photo]="photo$ | async" (like)="onLike()" (dislike)="onDislike()"></app-photo>
     </div>
   `,
   styleUrls: ['./app.component.scss']
@@ -20,5 +20,9 @@ export class AppComponent {
 
   onLike(): void {
     this.store.dispatch(likePhoto());
+  }
+
+  onDislike(): void {
+    this.store.dispatch(dislikePhoto());
   }
 }
