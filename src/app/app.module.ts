@@ -6,6 +6,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {PhotoModule} from './photo/photo.module';
 import {StoreModule} from '@ngrx/store';
 import {photoReducer} from './store/photo.reducer';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import {environment} from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,11 @@ import {photoReducer} from './store/photo.reducer';
         photo: photoReducer
       },
       {}
-    )
+    ),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+      logOnly: environment.production, // Restrict extension to log-only mode
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
