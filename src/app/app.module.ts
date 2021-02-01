@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {PhotoModule} from './photo/photo.module';
 import { StoreModule } from '@ngrx/store';
+import {photoReducer} from './store/photo.reducer';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,9 @@ import { StoreModule } from '@ngrx/store';
     BrowserModule,
     BrowserAnimationsModule,
     PhotoModule,
-    StoreModule.forRoot({}, {})
+    StoreModule.forRoot({
+      photo: photoReducer
+    }, {})
   ],
   providers: [],
   bootstrap: [AppComponent]
