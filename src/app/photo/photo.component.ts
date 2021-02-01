@@ -28,7 +28,7 @@ import {Photo} from './photo';
   styleUrls: ['./photo.component.scss']
 })
 export class PhotoComponent {
-  @Input() photo?: Photo;
+  @Input() photo?: Photo | null;
 
   @Output() like = new EventEmitter();
 
