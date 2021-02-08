@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {select, Store} from '@ngrx/store';
 import {selectPhoto} from './store/photo.selectors';
 import {dislikePhoto, likePhoto} from './store/photo.actions';
+import {AppState} from './store/app.state';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,7 @@ import {dislikePhoto, likePhoto} from './store/photo.actions';
 export class AppComponent {
   photo$ = this.store.pipe(select(selectPhoto));
 
-  constructor(private store: Store<any>) {
+  constructor(private store: Store<AppState>) {
   }
 
   onLike(): void {
