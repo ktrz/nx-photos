@@ -1,12 +1,34 @@
 import {createReducer, on} from '@ngrx/store';
 import {dislikePhoto, likePhoto} from './photo.actions';
+import {Photo} from '../photo/photo';
 
-export type PhotoState = number;
+export interface PhotoState {
+  [id: string]: Photo;
+}
 
-const initialState: PhotoState = 0;
+const initialState: PhotoState = {
+  ['1']: {
+    id: '1',
+    title: 'Introduction to NgRx',
+    url: 'https://ngrx.io/assets/images/ngrx-badge.png',
+    likes: 0
+  }
+};
 
 export const photoReducer = createReducer(
   initialState,
-  on(likePhoto, state => state + 1),
-  on(dislikePhoto, state => state - 1)
+  on(likePhoto, (state, {id}) => ({
+    ...state,
+    [id]: {
+      ...state[id],
+      likes: state[id].likes + 1
+    }
+  })),
+  on(dislikePhoto, (state, {id}) => ({
+    ...state,
+    [id]: {
+      ...state[id],
+      likes: state[id].likes - 1
+    }
+  }))
 );

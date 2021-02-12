@@ -1,4 +1,4 @@
-import {createAction} from '@ngrx/store';
+import {createAction, props} from '@ngrx/store';
 
-export const likePhoto = createAction('[Photo List] Like Photo');
-export const dislikePhoto = createAction('[Photo List] Dislike Photo');
+export const likePhoto = createAction('[Photo List] Like Photo', props<{id: string}>());
+export const dislikePhoto = createAction('[Photo List] Dislike Photo', props<{id: string}>());
