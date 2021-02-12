@@ -12,6 +12,12 @@ const initialState: PhotoState = {
     title: 'Introduction to NgRx',
     url: 'https://ngrx.io/assets/images/ngrx-badge.png',
     likes: 0
+  },
+  ['2']: {
+    id: '2',
+    title: 'Angular',
+    url: 'https://angular.io/assets/images/logos/angular/angular.png',
+    likes: 0
   }
 };
 

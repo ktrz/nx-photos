@@ -6,7 +6,6 @@ import {Photo} from './photo';
   template: `
     <mat-card class="example-card" *ngIf="photo">
       <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
         <mat-card-title>{{photo.title}}</mat-card-title>
       </mat-card-header>
       <mat-card-content>
