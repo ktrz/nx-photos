@@ -21,8 +21,8 @@ import {Photo} from './photo';
           </ng-template>
         </button>
         <button mat-icon-button (click)="onDislike(photo.id)">
-          <ng-container *ngIf="photo.likes < 0; else notDislikedButton">
-            <mat-icon [matBadge]="-photo.likes" matBadgeColor="warn" color="primary">thumb_down</mat-icon>
+          <ng-container *ngIf="photo.dislikes > 0; else notDislikedButton">
+            <mat-icon [matBadge]="photo.dislikes" matBadgeColor="warn" color="primary">thumb_down</mat-icon>
           </ng-container>
           <ng-template #notDislikedButton>
             <mat-icon color="primary">thumb_down_off_alt</mat-icon>
@@ -35,7 +35,7 @@ import {Photo} from './photo';
   styleUrls: ['./photo.component.scss']
 })
 export class PhotoComponent {
-  @Input() photo?: Photo | null;
+  @Input() photo?: Photo;
 
   @Output() like = new EventEmitter<string>();
   @Output() dislike = new EventEmitter<string>();
