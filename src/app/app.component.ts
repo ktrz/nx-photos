@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {select, Store} from '@ngrx/store';
+import {Store} from '@ngrx/store';
 import {selectPhoto} from './store/photo.selectors';
 import {dislikePhoto, likePhoto} from './store/photo.actions';
 import {AppState} from './store/app.state';
@@ -14,7 +14,7 @@ import {AppState} from './store/app.state';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  photo$ = this.store.pipe(select(selectPhoto));
+  photo$ = this.store.select(selectPhoto);
 
   constructor(private store: Store<AppState>) {
   }
