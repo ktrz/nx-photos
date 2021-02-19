@@ -6,6 +6,12 @@ export interface PhotoState {
   [id: string]: Photo;
 }
 
+export const photoFeatureKey = 'photo';
+
+export interface PhotoRootState {
+  [photoFeatureKey]: PhotoState;
+}
+
 const initialState: PhotoState = {
   ['1']: {
     id: '1',

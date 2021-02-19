@@ -1,5 +1,3 @@
-import {PhotoState} from './photo.reducer';
+import {PhotoRootState} from './photo.reducer';
 
-export interface AppState {
-  photo: PhotoState;
-}
+export type AppState = PhotoRootState; /* & OtherRootState  & ... */

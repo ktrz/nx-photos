@@ -1,7 +1,7 @@
-import {createSelector} from '@ngrx/store';
-import {PhotoState} from './photo.reducer';
+import {createFeatureSelector, createSelector} from '@ngrx/store';
+import {photoFeatureKey, PhotoRootState, PhotoState} from './photo.reducer';
 
-const selectPhotoFeature = (state: { photo: PhotoState }) => state.photo;
+const selectPhotoFeature = createFeatureSelector<PhotoRootState, PhotoState>(photoFeatureKey);
 
 export const selectPhotos = createSelector(selectPhotoFeature, state => Object.keys(state).map(key => state[key]));
 
