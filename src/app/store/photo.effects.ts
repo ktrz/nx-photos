@@ -10,7 +10,8 @@ import {
   updatePhotoError,
   updatePhotoSuccess
 } from './photo.actions';
-import {catchError, map, switchMap} from 'rxjs/operators';
+import {catchError, delay, map, switchMap} from 'rxjs/operators';
+import {of} from 'rxjs';
 
 @Injectable()
 export class PhotoEffects {
@@ -38,6 +39,11 @@ export class PhotoEffects {
       map(photo => updatePhotoSuccess({photo})),
       catchError(() => [updatePhotoError()])
     ))
+  ));
+
+  pollPhotos$ = createEffect(() => this.actions$.pipe(
+    ofType(loadPhotosSuccess, loadPhotosError),
+    switchMap(() => of(loadPhotos()).pipe(delay(5000)))
   ));
 
   constructor(private actions$: Actions, private photoService: PhotoService) {
