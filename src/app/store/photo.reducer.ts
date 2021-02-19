@@ -1,5 +1,5 @@
 import {createReducer, on} from '@ngrx/store';
-import {dislikePhoto, likePhoto, loadPhotosSuccess} from './photo.actions';
+import {loadPhotosSuccess, updatePhotoSuccess} from './photo.actions';
 import {Photo} from '../photo/photo';
 
 export interface PhotoState {
@@ -16,19 +16,9 @@ const initialState: PhotoState = {};
 
 export const photoReducer = createReducer(
   initialState,
-  on(likePhoto, (state, {id}) => ({
+  on(updatePhotoSuccess, (state, {photo}) => ({
     ...state,
-    [id]: {
-      ...state[id],
-      likes: state[id].likes + 1
-    }
-  })),
-  on(dislikePhoto, (state, {id}) => ({
-    ...state,
-    [id]: {
-      ...state[id],
-      dislikes: state[id].dislikes + 1
-    }
+    [photo.id]: photo
   })),
   on(loadPhotosSuccess, (state, {photos}) => photos.reduce((acc, photo) => ({
     ...acc,
