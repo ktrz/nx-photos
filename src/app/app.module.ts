@@ -9,6 +9,8 @@ import {photoReducer} from './store/photo.reducer';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {environment} from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
+import {PhotoEffects} from './store/photo.effects';
+import {ApiModule} from './api/api.module';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { EffectsModule } from '@ngrx/effects';
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode
     }),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([PhotoEffects]),
+    ApiModule
   ],
   providers: [],
   bootstrap: [AppComponent]
