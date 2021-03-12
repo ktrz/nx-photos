@@ -1,6 +1,6 @@
-# IntroductionToNgrx
+# Nx Photos
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.2.
+This project is showcasing Nrwl Nx monorepo with an example of simple app for displaying and liking photos
 
 ## Development server
 
