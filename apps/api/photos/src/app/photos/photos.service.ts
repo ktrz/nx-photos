@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import {Injectable} from '@nestjs/common';
 import {Photo, PhotoState} from './photo.model';
 
 const stateToArray = (state: PhotoState): Photo[] =>
@@ -32,5 +32,29 @@ export class PhotosService {
 
   getPhotos(): Photo[] {
     return stateToArray(this.state);
+  }
+
+  likePhoto(id: string): Photo {
+    const photo = this.state[id];
+    this.state = {
+      ...this.state,
+      [id]: {
+        ...photo,
+        likes: photo.likes + 1,
+      },
+    };
+    return this.state[id];
+  }
+
+  dislikePhoto(id: string): Photo {
+    const photo = this.state[id];
+    this.state = {
+      ...this.state,
+      [id]: {
+        ...photo,
+        dislikes: photo.dislikes + 1,
+      },
+    };
+    return this.state[id];
   }
 }
