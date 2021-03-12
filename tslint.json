@@ -1,7 +1,8 @@
 {
   "extends": "tslint:recommended",
   "rulesDirectory": [
-    "codelyzer"
+    "codelyzer",
+    "node_modules/@nrwl/workspace/src/tslint"
   ],
   "rules": {
     "align": {
@@ -147,6 +148,20 @@
       "element",
       "app",
       "kebab-case"
+    ],
+    "nx-enforce-module-boundaries": [
+      true,
+      {
+        "allow": [],
+        "depConstraints": [
+          {
+            "sourceTag": "*",
+            "onlyDependOnLibsWithTags": [
+              "*"
+            ]
+          }
+        ]
+      }
     ]
   }
 }

@@ -2,12 +2,30 @@
   "name": "introduction-to-ngrx",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
+    "ng": "nx",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "lint": "nx workspace-lint && ng lint",
+    "e2e": "ng e2e",
+    "nx": "nx",
+    "affected:apps": "nx affected:apps",
+    "affected:libs": "nx affected:libs",
+    "affected:build": "nx affected:build",
+    "affected:e2e": "nx affected:e2e",
+    "affected:test": "nx affected:test",
+    "affected:lint": "nx affected:lint",
+    "affected:dep-graph": "nx affected:dep-graph",
+    "affected": "nx affected",
+    "format": "nx format:write",
+    "format:write": "nx format:write",
+    "format:check": "nx format:check",
+    "update": "ng update @nrwl/workspace",
+    "update:check": "ng update",
+    "dep-graph": "nx dep-graph",
+    "workspace-schematic": "nx workspace-schematic",
+    "help": "nx help",
+    "postinstall": "node ./decorate-angular-cli.js"
   },
   "private": true,
   "dependencies": {
@@ -24,9 +42,11 @@
     "@ngrx/effects": "^11.0.1",
     "@ngrx/store": "^10.1.2",
     "@ngrx/store-devtools": "^10.1.2",
+    "@nrwl/workspace": "^11.5.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
-    "zone.js": "~0.11.3"
+    "zone.js": "~0.11.3",
+    "@nrwl/angular": "11.5.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1101.2",
@@ -45,6 +65,8 @@
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~4.1.2"
+    "typescript": "~4.1.2",
+    "@nrwl/workspace": "11.5.1",
+    "prettier": "2.2.1"
   }
 }

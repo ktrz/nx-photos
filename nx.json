@@ -1,0 +1,23 @@
+{
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": "*",
+    "tslint.json": "*",
+    ".eslintrc.json": "*",
+    "nx.json": "*",
+    "tsconfig.base.json": "*"
+  },
+  "affected": {
+    "defaultBase": "master"
+  },
+  "npmScope": "introduction-to-ngrx",
+  "projects": {
+    "fe-photos": {
+      "tags": []
+    },
+    "fe-photos-e2e": {
+      "tags": [],
+      "implicitDependencies": ["fe-photos"]
+    }
+  }
+}

@@ -1,13 +1,13 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "cli": {
     "analytics": false,
-    "packageManager": "yarn"
+    "packageManager": "yarn",
+    "defaultCollection": "@nrwl/angular"
   },
-  "newProjectRoot": "projects",
+  "defaultProject": "fe-photos",
   "projects": {
-    "introduction-to-ngrx": {
+    "fe-photos": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -18,26 +18,26 @@
           "strict": true
         }
       },
-      "root": "",
-      "sourceRoot": "src",
+      "root": "apps/fe/photos",
+      "sourceRoot": "apps/fe/photos/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/introduction-to-ngrx",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.app.json",
+            "outputPath": "dist/apps/fe/photos",
+            "index": "apps/fe/photos/src/index.html",
+            "main": "apps/fe/photos/src/main.ts",
+            "polyfills": "apps/fe/photos/src/polyfills.ts",
+            "tsConfig": "apps/fe/photos/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "apps/fe/photos/src/favicon.ico",
+              "apps/fe/photos/src/assets"
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
-              "src/styles.scss"
+              "apps/fe/photos/src/styles.scss"
             ],
             "scripts": []
           },
@@ -45,8 +45,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "replace": "apps/fe/photos/src/environments/environment.ts",
+                  "with": "apps/fe/photos/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -74,34 +74,34 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "introduction-to-ngrx:build"
+            "browserTarget": "fe-photos:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "introduction-to-ngrx:build:production"
+              "browserTarget": "fe-photos:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "introduction-to-ngrx:build"
+            "browserTarget": "fe-photos:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
+            "main": "apps/fe/photos/src/test.ts",
+            "polyfills": "apps/fe/photos/src/polyfills.ts",
+            "tsConfig": "apps/fe/photos/tsconfig.spec.json",
+            "karmaConfig": "apps/fe/photos/karma.conf.js",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "apps/fe/photos/src/favicon.ico",
+              "apps/fe/photos/src/assets"
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
-              "src/styles.scss"
+              "apps/fe/photos/src/styles.scss"
             ],
             "scripts": []
           }
@@ -110,29 +110,50 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
+              "apps/fe/photos/tsconfig.app.json",
+              "apps/fe/photos/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "introduction-to-ngrx:serve"
+            "devServerTarget": "fe-photos:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "introduction-to-ngrx:serve:production"
+              "devServerTarget": "fe-photos:serve:production"
             }
           }
         }
       }
+    },
+    "fe-photos-e2e": {
+      "root": "apps/fe/photos-e2e",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/fe/photos-e2e/protractor.conf.js",
+            "devServerTarget": "fe-photos:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "fe-photos:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/fe/photos-e2e/tsconfig.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
     }
-  },
-  "defaultProject": "introduction-to-ngrx"
+  }
 }
