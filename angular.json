@@ -74,7 +74,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "fe-photos:build"
+            "browserTarget": "fe-photos:build",
+            "proxyConfig": "apps/fe/photos/proxy.conf.json"
           },
           "configurations": {
             "production": {
@@ -151,6 +152,57 @@
           "options": {
             "tsConfig": "apps/fe/photos-e2e/tsconfig.json",
             "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "api-photos": {
+      "root": "apps/api/photos",
+      "sourceRoot": "apps/api/photos/src",
+      "projectType": "application",
+      "prefix": "api-photos",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/api/photos",
+            "main": "apps/api/photos/src/main.ts",
+            "tsConfig": "apps/api/photos/tsconfig.app.json",
+            "assets": ["apps/api/photos/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/api/photos/src/environments/environment.ts",
+                  "with": "apps/api/photos/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "api-photos:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/api/photos/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/api/photos"],
+          "options": {
+            "jestConfig": "apps/api/photos/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
