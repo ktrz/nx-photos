@@ -206,6 +206,27 @@
           }
         }
       }
+    },
+    "photo-api": {
+      "root": "libs/photo/api",
+      "sourceRoot": "libs/photo/api/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/photo/api/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/photo/api"],
+          "options": {
+            "jestConfig": "libs/photo/api/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

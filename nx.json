@@ -8,10 +8,11 @@
     "tsconfig.base.json": "*"
   },
   "affected": { "defaultBase": "master" },
-  "npmScope": "introduction-to-ngrx",
+  "npmScope": "nx-photos",
   "projects": {
     "fe-photos": { "tags": [] },
     "fe-photos-e2e": { "tags": [], "implicitDependencies": ["fe-photos"] },
-    "api-photos": { "tags": [] }
+    "api-photos": { "tags": [] },
+    "photo-api": { "tags": [] }
   }
 }

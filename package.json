@@ -1,5 +1,5 @@
 {
-  "name": "introduction-to-ngrx",
+  "name": "nx-photos",
   "version": "0.0.0",
   "scripts": {
     "ng": "nx",
