@@ -207,22 +207,22 @@
         }
       }
     },
-    "photo-api": {
-      "root": "libs/photo/api",
-      "sourceRoot": "libs/photo/api/src",
+    "photo-api-model": {
+      "root": "libs/photo/api-model",
+      "sourceRoot": "libs/photo/api-model/src",
       "projectType": "library",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/photo/api/**/*.ts"]
+            "lintFilePatterns": ["libs/photo/api-model/**/*.ts"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/photo/api"],
+          "outputs": ["coverage/libs/photo/api-model"],
           "options": {
-            "jestConfig": "libs/photo/api/jest.config.js",
+            "jestConfig": "libs/photo/api-model/jest.config.js",
             "passWithNoTests": true
           }
         }

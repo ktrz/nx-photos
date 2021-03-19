@@ -17,7 +17,7 @@
     "module": "es2020",
     "lib": ["es2018", "dom"],
     "paths": {
-      "@nx-photos/photo/api": ["libs/photo/api/src/index.ts"]
+      "@nx-photos/photo/api-model": ["libs/photo/api-model/src/index.ts"]
     },
     "rootDir": "."
   },
