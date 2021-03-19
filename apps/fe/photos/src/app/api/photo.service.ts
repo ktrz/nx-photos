@@ -1,8 +1,9 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { Photo } from '../photo/photo';
-import { environment } from '../../environments/environment';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {Photo} from '../photo/photo';
+import {environment} from '../../environments/environment';
+import {ApiPhoto} from '@nx-photos/photo/api';
 
 @Injectable({
   providedIn: 'root',
@@ -10,17 +11,18 @@ import { environment } from '../../environments/environment';
 export class PhotoService {
   private apiRoot = environment.apiRoot;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   getPhotos(): Observable<Photo[]> {
-    return this.http.get<Photo[]>(`${this.apiRoot}/photos`);
+    return this.http.get<ApiPhoto[]>(`${this.apiRoot}/photos`);
   }
 
   likePhoto(id: string): Observable<Photo> {
-    return this.http.put<Photo>(`${this.apiRoot}/photos/${id}/like`, null);
+    return this.http.put<ApiPhoto>(`${this.apiRoot}/photos/${id}/like`, null);
   }
 
   dislikePhoto(id: string): Observable<Photo> {
-    return this.http.put<Photo>(`${this.apiRoot}/photos/${id}/dislike`, null);
+    return this.http.put<ApiPhoto>(`${this.apiRoot}/photos/${id}/dislike`, null);
   }
 }

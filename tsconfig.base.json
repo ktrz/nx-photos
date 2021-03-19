@@ -15,11 +15,10 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "es2020",
-    "lib": [
-      "es2018",
-      "dom"
-    ],
-    "paths": {},
+    "lib": ["es2018", "dom"],
+    "paths": {
+      "@nx-photos/photo/api": ["libs/photo/api/src/index.ts"]
+    },
     "rootDir": "."
   },
   "angularCompilerOptions": {

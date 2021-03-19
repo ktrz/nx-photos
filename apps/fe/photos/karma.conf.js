@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true, // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/introduction-to-ngrx'),
+      dir: require('path').join(__dirname, './coverage/nx-photos'),
       subdir: '.',
       reporters: [{ type: 'html' }, { type: 'text-summary' }],
     },
