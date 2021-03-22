@@ -13,11 +13,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    PhotoDataAccessModule,
-    RouterModule.forChild(routes),
-  ],
+  imports: [CommonModule, PhotoDataAccessModule, RouterModule.forChild(routes)],
   exports: [PhotoListModule],
 })
 export class PhotoFeatureListModule {}

@@ -28,14 +28,14 @@
     "photo-ui": {
       "tags": ["type:ui"]
     },
-    "photo-feature-list": {
-      "tags": ["type:feature"]
-    },
     "photo-api-model": {
       "tags": ["type:api-model"]
     },
     "photo-data-access": {
       "tags": ["type:data-access"]
+    },
+    "photo-feature-list": {
+      "tags": ["type:feature"]
     }
   }
 }
