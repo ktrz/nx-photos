@@ -18,7 +18,8 @@
     "lib": ["es2018", "dom"],
     "paths": {
       "@nx-photos/photo/api-model": ["libs/photo/api-model/src/index.ts"],
-      "@nx-photos/photo/data-access": ["libs/photo/data-access/src/index.ts"]
+      "@nx-photos/photo/data-access": ["libs/photo/data-access/src/index.ts"],
+      "@nx-photos/photo/model": ["libs/photo/model/src/index.ts"]
     },
     "rootDir": "."
   },

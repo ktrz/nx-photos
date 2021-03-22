@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Photo } from '../photo.model';
-import { environment } from '../../../../../../apps/fe/photos/src/environments/environment';
 import { ApiPhoto } from '@nx-photos/photo/api-model';
+import {Photo} from '@nx-photos/photo/model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PhotoApiService {
-  private apiRoot = environment.apiRoot;
+  private apiRoot = '/api'; // TODO: environment.apiRoot;
 
   constructor(private http: HttpClient) {}
 

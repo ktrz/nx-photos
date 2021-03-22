@@ -1,10 +1,10 @@
 import {Store} from '@ngrx/store';
 import {AppState} from './store/app.state';
 import {Observable} from 'rxjs';
-import {Photo} from './photo.model';
 import {selectPhotos} from './store/photo.selectors';
 import {dislikePhoto, likePhoto, loadPhotos} from './store/photo.actions';
 import {Injectable} from '@angular/core';
+import {Photo} from '@nx-photos/photo/model';
 
 @Injectable({
   providedIn: 'root'

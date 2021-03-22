@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Photo, PhotoService} from '@nx-photos/photo/data-access';
+import {PhotoService} from '@nx-photos/photo/data-access';
+import {Photo} from '@nx-photos/photo/model';
 
 @Component({
   selector: 'app-root',

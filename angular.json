@@ -252,6 +252,31 @@
           }
         }
       }
+    },
+    "photo-model": {
+      "projectType": "library",
+      "root": "libs/photo/model",
+      "sourceRoot": "libs/photo/model/src",
+      "prefix": "nx-photos",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/photo/model/src/**/*.ts",
+              "libs/photo/model/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/photo/model"],
+          "options": {
+            "jestConfig": "libs/photo/model/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "schematics": {
