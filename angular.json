@@ -277,6 +277,56 @@
           }
         }
       }
+    },
+    "photo-ui": {
+      "projectType": "library",
+      "root": "libs/photo/ui",
+      "sourceRoot": "libs/photo/ui/src",
+      "prefix": "nx-photos",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/photo/ui/src/**/*.ts",
+              "libs/photo/ui/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/photo/ui"],
+          "options": {
+            "jestConfig": "libs/photo/ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "photo-feature-list": {
+      "projectType": "library",
+      "root": "libs/photo/feature-list",
+      "sourceRoot": "libs/photo/feature-list/src",
+      "prefix": "nx-photos",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/photo/feature-list/src/**/*.ts",
+              "libs/photo/feature-list/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/photo/feature-list"],
+          "options": {
+            "jestConfig": "libs/photo/feature-list/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "schematics": {

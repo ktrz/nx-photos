@@ -15,6 +15,8 @@
     "api-photos": { "tags": [] },
     "photo-api-model": { "tags": [] },
     "photo-data-access": { "tags": [] },
-    "photo-model": { "tags": [] }
+    "photo-model": { "tags": [] },
+    "photo-ui": { "tags": [] },
+    "photo-feature-list": { "tags": [] }
   }
 }
