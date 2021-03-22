@@ -10,7 +10,7 @@
       ],
       "parserOptions": {
         "project": [
-          "libs/photo/ui/tsconfig.*?.json"
+          "apps/fe/photos/tsconfig.*?.json"
         ]
       },
       "rules": {

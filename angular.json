@@ -108,13 +108,12 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": [
-              "apps/fe/photos/tsconfig.app.json",
-              "apps/fe/photos/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
+            "lintFilePatterns": [
+              "apps/fe/photos/**/*.ts",
+              "apps/fe/photos/**/*.html"
+            ]
           }
         },
         "e2e": {
@@ -148,10 +147,12 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": "apps/fe/photos-e2e/tsconfig.json",
-            "exclude": ["**/node_modules/**"]
+            "lintFilePatterns": [
+              "apps/fe/photos-e2e/**/*.ts",
+              "apps/fe/photos-e2e/**/*.html"
+            ]
           }
         }
       }
@@ -164,12 +165,16 @@
       "architect": {
         "build": {
           "builder": "@nrwl/node:build",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/api/photos",
             "main": "apps/api/photos/src/main.ts",
             "tsConfig": "apps/api/photos/tsconfig.app.json",
-            "assets": ["apps/api/photos/src/assets"]
+            "assets": [
+              "apps/api/photos/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -194,12 +199,17 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/api/photos/**/*.ts"]
+            "lintFilePatterns": [
+              "apps/api/photos/**/*.ts",
+              "apps/api/photos/**/*.html"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/api/photos"],
+          "outputs": [
+            "coverage/apps/api/photos"
+          ],
           "options": {
             "jestConfig": "apps/api/photos/jest.config.js",
             "passWithNoTests": true
@@ -215,12 +225,17 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/photo/api-model/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/photo/api-model/**/*.ts",
+              "libs/photo/api-model/**/*.html"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/photo/api-model"],
+          "outputs": [
+            "coverage/libs/photo/api-model"
+          ],
           "options": {
             "jestConfig": "libs/photo/api-model/jest.config.js",
             "passWithNoTests": true
@@ -238,14 +253,16 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/photo/data-access/src/**/*.ts",
-              "libs/photo/data-access/src/**/*.html"
+              "libs/photo/data-access/**/*.ts",
+              "libs/photo/data-access/**/*.html"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/photo/data-access"],
+          "outputs": [
+            "coverage/libs/photo/data-access"
+          ],
           "options": {
             "jestConfig": "libs/photo/data-access/jest.config.js",
             "passWithNoTests": true
@@ -263,14 +280,16 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/photo/model/src/**/*.ts",
-              "libs/photo/model/src/**/*.html"
+              "libs/photo/model/**/*.ts",
+              "libs/photo/model/**/*.html"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/photo/model"],
+          "outputs": [
+            "coverage/libs/photo/model"
+          ],
           "options": {
             "jestConfig": "libs/photo/model/jest.config.js",
             "passWithNoTests": true
@@ -288,14 +307,16 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/photo/ui/src/**/*.ts",
-              "libs/photo/ui/src/**/*.html"
+              "libs/photo/ui/**/*.ts",
+              "libs/photo/ui/**/*.html"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/photo/ui"],
+          "outputs": [
+            "coverage/libs/photo/ui"
+          ],
           "options": {
             "jestConfig": "libs/photo/ui/jest.config.js",
             "passWithNoTests": true
@@ -313,14 +334,16 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/photo/feature-list/src/**/*.ts",
-              "libs/photo/feature-list/src/**/*.html"
+              "libs/photo/feature-list/**/*.ts",
+              "libs/photo/feature-list/**/*.html"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/photo/feature-list"],
+          "outputs": [
+            "coverage/libs/photo/feature-list"
+          ],
           "options": {
             "jestConfig": "libs/photo/feature-list/jest.config.js",
             "passWithNoTests": true

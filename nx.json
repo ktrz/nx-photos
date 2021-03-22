@@ -12,8 +12,8 @@
   "projects": {
     "fe-photos": { "tags": ["type:app"] },
     "fe-photos-e2e": { "tags": [], "implicitDependencies": ["fe-photos"] },
-    "api-photos": { "tags": [] },
-    "photo-api-model": { "tags": ["type:data-api"] },
+    "api-photos": { "tags": ["type:be"] },
+    "photo-api-model": { "tags": ["type:api-model"] },
     "photo-data-access": { "tags": ["type:data-access"] },
     "photo-model": { "tags": ["type:model"] },
     "photo-ui": { "tags": ["type:ui"] },
