@@ -165,16 +165,12 @@
       "architect": {
         "build": {
           "builder": "@nrwl/node:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/api/photos",
             "main": "apps/api/photos/src/main.ts",
             "tsConfig": "apps/api/photos/tsconfig.app.json",
-            "assets": [
-              "apps/api/photos/src/assets"
-            ]
+            "assets": ["apps/api/photos/src/assets"]
           },
           "configurations": {
             "production": {
@@ -207,37 +203,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/api/photos"
-          ],
+          "outputs": ["coverage/apps/api/photos"],
           "options": {
             "jestConfig": "apps/api/photos/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "photo-api-model": {
-      "root": "libs/photo/api-model",
-      "sourceRoot": "libs/photo/api-model/src",
-      "projectType": "library",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/photo/api-model/**/*.ts",
-              "libs/photo/api-model/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/photo/api-model"
-          ],
-          "options": {
-            "jestConfig": "libs/photo/api-model/jest.config.js",
             "passWithNoTests": true
           }
         }
@@ -260,9 +228,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/photo/data-access"
-          ],
+          "outputs": ["coverage/libs/photo/data-access"],
           "options": {
             "jestConfig": "libs/photo/data-access/jest.config.js",
             "passWithNoTests": true
@@ -287,9 +253,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/photo/model"
-          ],
+          "outputs": ["coverage/libs/photo/model"],
           "options": {
             "jestConfig": "libs/photo/model/jest.config.js",
             "passWithNoTests": true
@@ -314,9 +278,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/photo/ui"
-          ],
+          "outputs": ["coverage/libs/photo/ui"],
           "options": {
             "jestConfig": "libs/photo/ui/jest.config.js",
             "passWithNoTests": true
@@ -341,11 +303,33 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/photo/feature-list"
-          ],
+          "outputs": ["coverage/libs/photo/feature-list"],
           "options": {
             "jestConfig": "libs/photo/feature-list/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "photo-api-model": {
+      "root": "libs/photo-api-model",
+      "sourceRoot": "libs/photo-api-model/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/photo-api-model/**/*.ts",
+              "libs/photo-api-model/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/photo-api-model"],
+          "options": {
+            "jestConfig": "libs/photo-api-model/jest.config.js",
             "passWithNoTests": true
           }
         }

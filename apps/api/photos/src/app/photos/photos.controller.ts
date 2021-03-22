@@ -1,6 +1,6 @@
 import { Controller, Get, Param, Put } from '@nestjs/common';
 import { PhotosService } from './photos.service';
-import { ApiPhoto } from '@nx-photos/photo/api-model';
+import { ApiPhoto } from '@nx-photos/photo-api-model';
 
 @Controller('photos')
 export class PhotosController {

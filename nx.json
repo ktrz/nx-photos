@@ -7,16 +7,35 @@
     "nx.json": "*",
     "tsconfig.base.json": "*"
   },
-  "affected": { "defaultBase": "master" },
+  "affected": {
+    "defaultBase": "master"
+  },
   "npmScope": "nx-photos",
   "projects": {
-    "fe-photos": { "tags": ["type:app"] },
-    "fe-photos-e2e": { "tags": [], "implicitDependencies": ["fe-photos"] },
-    "api-photos": { "tags": ["type:be"] },
-    "photo-api-model": { "tags": ["type:api-model"] },
-    "photo-data-access": { "tags": ["type:data-access"] },
-    "photo-model": { "tags": ["type:model"] },
-    "photo-ui": { "tags": ["type:ui"] },
-    "photo-feature-list": { "tags": ["type:feature"] }
+    "fe-photos": {
+      "tags": ["type:app"]
+    },
+    "fe-photos-e2e": {
+      "tags": [],
+      "implicitDependencies": ["fe-photos"]
+    },
+    "api-photos": {
+      "tags": ["type:be"]
+    },
+    "photo-data-access": {
+      "tags": ["type:data-access"]
+    },
+    "photo-model": {
+      "tags": ["type:model"]
+    },
+    "photo-ui": {
+      "tags": ["type:ui"]
+    },
+    "photo-feature-list": {
+      "tags": ["type:feature"]
+    },
+    "photo-api-model": {
+      "tags": ["type:api-model"]
+    }
   }
 }
