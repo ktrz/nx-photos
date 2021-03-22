@@ -1,9 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { selectPhotos } from '../../../../../libs/photo/data-access/src/lib/store/photo.selectors';
-import { dislikePhoto, likePhoto, loadPhotos } from '../../../../../libs/photo/data-access/src/lib/store/photo.actions';
-import { AppState } from '../../../../../libs/photo/data-access/src/lib/store/app.state';
-import { Photo } from './photo/photo';
+import {Component, OnInit} from '@angular/core';
+import {Photo, PhotoService} from '@nx-photos/photo/data-access';
 
 @Component({
   selector: 'app-root',
@@ -21,20 +17,20 @@ import { Photo } from './photo/photo';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  photos$ = this.store.select(selectPhotos);
+  photos$ = this.photoService.getPhotos();
 
-  constructor(private store: Store<AppState>) {}
+  constructor(private photoService: PhotoService) {}
 
   ngOnInit(): void {
-    this.store.dispatch(loadPhotos());
+    this.photoService.loadPhotos();
   }
 
   onLike(id: string): void {
-    this.store.dispatch(likePhoto({ id }));
+    this.photoService.likePhoto(id);
   }
 
   onDislike(id: string): void {
-    this.store.dispatch(dislikePhoto({ id }));
+    this.photoService.dislikePhoto(id);
   }
 
   trackById(index: number, item: Photo): string {

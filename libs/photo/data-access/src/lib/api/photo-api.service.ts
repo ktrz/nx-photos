@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Photo } from '../../../../../../apps/fe/photos/src/app/photo/photo';
+import { Photo } from '../photo.model';
 import { environment } from '../../../../../../apps/fe/photos/src/environments/environment';
 import { ApiPhoto } from '@nx-photos/photo/api-model';
 
