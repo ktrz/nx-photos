@@ -10,7 +10,7 @@ import {
   updatePhotoError,
   updatePhotoSuccess,
 } from './photo.actions';
-import {catchError, delay, map, mergeMap, switchMap} from 'rxjs/operators';
+import { catchError, delay, map, mergeMap, switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 
 @Injectable()
@@ -58,5 +58,8 @@ export class PhotoEffects {
     )
   );
 
-  constructor(private actions$: Actions, private photoService: PhotoApiService) {}
+  constructor(
+    private actions$: Actions,
+    private photoService: PhotoApiService
+  ) {}
 }

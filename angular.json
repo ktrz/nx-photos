@@ -211,31 +211,6 @@
         }
       }
     },
-    "photo-data-access": {
-      "projectType": "library",
-      "root": "libs/photo/data-access",
-      "sourceRoot": "libs/photo/data-access/src",
-      "prefix": "nx-photos",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/photo/data-access/**/*.ts",
-              "libs/photo/data-access/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/photo/data-access"],
-          "options": {
-            "jestConfig": "libs/photo/data-access/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "photo-model": {
       "projectType": "library",
       "root": "libs/photo/model",
@@ -330,6 +305,31 @@
           "outputs": ["coverage/libs/photo-api-model"],
           "options": {
             "jestConfig": "libs/photo-api-model/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "photo-data-access": {
+      "projectType": "library",
+      "root": "libs/photo-data-access",
+      "sourceRoot": "libs/photo-data-access/src",
+      "prefix": "nx-photos",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/photo-data-access/**/*.ts",
+              "libs/photo-data-access/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/photo-data-access"],
+          "options": {
+            "jestConfig": "libs/photo-data-access/jest.config.js",
             "passWithNoTests": true
           }
         }

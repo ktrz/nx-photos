@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {PhotoService} from '@nx-photos/photo/data-access';
-import {Photo} from '@nx-photos/photo/model';
+import { PhotoService } from '@nx-photos/photo-data-access';
+import { Photo } from '@nx-photos/photo/model';
 
 @Component({
   selector: 'app-photo-list',
@@ -15,7 +15,7 @@ import {Photo} from '@nx-photos/photo/model';
       ></app-photo>
     </div>
   `,
-  styleUrls: ['./photo-list.component.scss']
+  styleUrls: ['./photo-list.component.scss'],
 })
 export class PhotoListComponent implements OnInit {
   photos$ = this.photoService.getPhotos();

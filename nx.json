@@ -22,9 +22,6 @@
     "api-photos": {
       "tags": ["type:be"]
     },
-    "photo-data-access": {
-      "tags": ["type:data-access"]
-    },
     "photo-model": {
       "tags": ["type:model"]
     },
@@ -36,6 +33,9 @@
     },
     "photo-api-model": {
       "tags": ["type:api-model"]
+    },
+    "photo-data-access": {
+      "tags": ["type:data-access"]
     }
   }
 }
