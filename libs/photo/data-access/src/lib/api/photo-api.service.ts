@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Photo } from '../photo/photo';
-import { environment } from '../../environments/environment';
+import { Photo } from '../../../../../../apps/fe/photos/src/app/photo/photo';
+import { environment } from '../../../../../../apps/fe/photos/src/environments/environment';
 import { ApiPhoto } from '@nx-photos/photo/api-model';
 
 @Injectable({
   providedIn: 'root',
 })
-export class PhotoService {
+export class PhotoApiService {
   private apiRoot = environment.apiRoot;
 
   constructor(private http: HttpClient) {}

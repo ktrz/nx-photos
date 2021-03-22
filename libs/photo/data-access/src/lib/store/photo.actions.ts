@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { Photo } from '../photo/photo';
+import { Photo } from '../../../../../../apps/fe/photos/src/app/photo/photo';
 
 export const loadPhotos = createAction('[Photo List] Load Photos');
 export const loadPhotosSuccess = createAction(

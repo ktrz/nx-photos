@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { selectPhotos } from './store/photo.selectors';
-import { dislikePhoto, likePhoto, loadPhotos } from './store/photo.actions';
-import { AppState } from './store/app.state';
+import { selectPhotos } from '../../../../../libs/photo/data-access/src/lib/store/photo.selectors';
+import { dislikePhoto, likePhoto, loadPhotos } from '../../../../../libs/photo/data-access/src/lib/store/photo.actions';
+import { AppState } from '../../../../../libs/photo/data-access/src/lib/store/app.state';
 import { Photo } from './photo/photo';
 
 @Component({

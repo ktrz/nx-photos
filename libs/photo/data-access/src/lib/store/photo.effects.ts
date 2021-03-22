@@ -1,5 +1,5 @@
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { PhotoService } from '../api/photo.service';
+import { PhotoApiService } from '../api/photo-api.service';
 import { Injectable } from '@angular/core';
 import {
   dislikePhoto,
@@ -10,7 +10,7 @@ import {
   updatePhotoError,
   updatePhotoSuccess,
 } from './photo.actions';
-import { catchError, delay, map, switchMap } from 'rxjs/operators';
+import {catchError, delay, map, mergeMap, switchMap} from 'rxjs/operators';
 import { of } from 'rxjs';
 
 @Injectable()
@@ -30,7 +30,7 @@ export class PhotoEffects {
   likePhoto$ = createEffect(() =>
     this.actions$.pipe(
       ofType(likePhoto),
-      switchMap(({ id }) =>
+      mergeMap(({ id }) =>
         this.photoService.likePhoto(id).pipe(
           map((photo) => updatePhotoSuccess({ photo })),
           catchError(() => [updatePhotoError()])
@@ -42,7 +42,7 @@ export class PhotoEffects {
   dislikePhoto$ = createEffect(() =>
     this.actions$.pipe(
       ofType(dislikePhoto),
-      switchMap(({ id }) =>
+      mergeMap(({ id }) =>
         this.photoService.dislikePhoto(id).pipe(
           map((photo) => updatePhotoSuccess({ photo })),
           catchError(() => [updatePhotoError()])
@@ -58,5 +58,5 @@ export class PhotoEffects {
     )
   );
 
-  constructor(private actions$: Actions, private photoService: PhotoService) {}
+  constructor(private actions$: Actions, private photoService: PhotoApiService) {}
 }
