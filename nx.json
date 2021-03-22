@@ -10,13 +10,13 @@
   "affected": { "defaultBase": "master" },
   "npmScope": "nx-photos",
   "projects": {
-    "fe-photos": { "tags": [] },
+    "fe-photos": { "tags": ["type:app"] },
     "fe-photos-e2e": { "tags": [], "implicitDependencies": ["fe-photos"] },
     "api-photos": { "tags": [] },
-    "photo-api-model": { "tags": [] },
-    "photo-data-access": { "tags": [] },
-    "photo-model": { "tags": [] },
-    "photo-ui": { "tags": [] },
-    "photo-feature-list": { "tags": [] }
+    "photo-api-model": { "tags": ["type:data-api"] },
+    "photo-data-access": { "tags": ["type:data-access"] },
+    "photo-model": { "tags": ["type:model"] },
+    "photo-ui": { "tags": ["type:ui"] },
+    "photo-feature-list": { "tags": ["type:feature"] }
   }
 }
