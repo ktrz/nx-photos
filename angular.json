@@ -211,31 +211,6 @@
         }
       }
     },
-    "photo-model": {
-      "projectType": "library",
-      "root": "libs/photo/model",
-      "sourceRoot": "libs/photo/model/src",
-      "prefix": "nx-photos",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/photo/model/**/*.ts",
-              "libs/photo/model/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/photo/model"],
-          "options": {
-            "jestConfig": "libs/photo/model/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "photo-ui": {
       "projectType": "library",
       "root": "libs/photo/ui",
@@ -330,6 +305,31 @@
           "outputs": ["coverage/libs/photo-feature-list"],
           "options": {
             "jestConfig": "libs/photo-feature-list/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "photo-model": {
+      "projectType": "library",
+      "root": "libs/photo-model",
+      "sourceRoot": "libs/photo-model/src",
+      "prefix": "nx-photos",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/photo-model/**/*.ts",
+              "libs/photo-model/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/photo-model"],
+          "options": {
+            "jestConfig": "libs/photo-model/jest.config.js",
             "passWithNoTests": true
           }
         }

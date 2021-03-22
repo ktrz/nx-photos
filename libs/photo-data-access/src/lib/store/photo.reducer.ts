@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import { loadPhotosSuccess, updatePhotoSuccess } from './photo.actions';
-import { Photo } from '@nx-photos/photo/model';
+import { Photo } from '@nx-photos/photo-model';
 
 export interface PhotoState {
   [id: string]: Photo;

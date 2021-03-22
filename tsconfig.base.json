@@ -17,11 +17,11 @@
     "module": "es2020",
     "lib": ["es2018", "dom"],
     "paths": {
-      "@nx-photos/photo/model": ["libs/photo/model/src/index.ts"],
       "@nx-photos/photo/ui": ["libs/photo/ui/src/index.ts"],
       "@nx-photos/photo-api-model": ["libs/photo-api-model/src/index.ts"],
       "@nx-photos/photo-data-access": ["libs/photo-data-access/src/index.ts"],
-      "@nx-photos/photo-feature-list": ["libs/photo-feature-list/src/index.ts"]
+      "@nx-photos/photo-feature-list": ["libs/photo-feature-list/src/index.ts"],
+      "@nx-photos/photo-model": ["libs/photo-model/src/index.ts"]
     },
     "rootDir": "."
   },

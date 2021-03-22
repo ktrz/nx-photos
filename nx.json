@@ -22,9 +22,6 @@
     "api-photos": {
       "tags": ["type:be"]
     },
-    "photo-model": {
-      "tags": ["type:model"]
-    },
     "photo-ui": {
       "tags": ["type:ui"]
     },
@@ -36,6 +33,9 @@
     },
     "photo-feature-list": {
       "tags": ["type:feature"]
+    },
+    "photo-model": {
+      "tags": ["type:model"]
     }
   }
 }

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ApiPhoto } from '@nx-photos/photo-api-model';
-import { Photo } from '@nx-photos/photo/model';
+import { Photo } from '@nx-photos/photo-model';
 
 @Injectable({
   providedIn: 'root',

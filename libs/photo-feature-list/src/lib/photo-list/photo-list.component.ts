@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PhotoService } from '@nx-photos/photo-data-access';
-import { Photo } from '@nx-photos/photo/model';
+import { Photo } from '@nx-photos/photo-model';
 
 @Component({
   selector: 'app-photo-list',

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { selectPhotos } from './store/photo.selectors';
 import { dislikePhoto, likePhoto, loadPhotos } from './store/photo.actions';
 import { Injectable } from '@angular/core';
-import { Photo } from '@nx-photos/photo/model';
+import { Photo } from '@nx-photos/photo-model';
 
 @Injectable({
   providedIn: 'root',

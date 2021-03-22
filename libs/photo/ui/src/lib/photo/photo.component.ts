@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import {Photo} from '@nx-photos/photo/model';
+import { Photo } from '@nx-photos/photo-model';
 
 @Component({
   selector: 'app-photo',
