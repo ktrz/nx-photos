@@ -12,9 +12,6 @@
   },
   "npmScope": "nx-photos",
   "projects": {
-    "api-photos": {
-      "tags": ["type:be"]
-    },
     "photo-api-model": {
       "tags": ["type:api-model"]
     },
@@ -36,6 +33,9 @@
     "photo-fe-e2e": {
       "tags": [],
       "implicitDependencies": ["photo-fe"]
+    },
+    "photo-api": {
+      "tags": ["type:be"]
     }
   }
 }

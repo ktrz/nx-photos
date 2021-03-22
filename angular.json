@@ -22,60 +22,6 @@
     }
   },
   "projects": {
-    "api-photos": {
-      "root": "apps/api/photos",
-      "sourceRoot": "apps/api/photos/src",
-      "projectType": "application",
-      "prefix": "api-photos",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/node:build",
-          "outputs": ["{options.outputPath}"],
-          "options": {
-            "outputPath": "dist/apps/api/photos",
-            "main": "apps/api/photos/src/main.ts",
-            "tsConfig": "apps/api/photos/tsconfig.app.json",
-            "assets": ["apps/api/photos/src/assets"]
-          },
-          "configurations": {
-            "production": {
-              "optimization": true,
-              "extractLicenses": true,
-              "inspect": false,
-              "fileReplacements": [
-                {
-                  "replace": "apps/api/photos/src/environments/environment.ts",
-                  "with": "apps/api/photos/src/environments/environment.prod.ts"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "@nrwl/node:execute",
-          "options": {
-            "buildTarget": "api-photos:build"
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "apps/api/photos/**/*.ts",
-              "apps/api/photos/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/api/photos"],
-          "options": {
-            "jestConfig": "apps/api/photos/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "photo-api-model": {
       "root": "libs/photo-api-model",
       "sourceRoot": "libs/photo-api-model/src",
@@ -346,6 +292,60 @@
               "apps/photo-fe-e2e/**/*.ts",
               "apps/photo-fe-e2e/**/*.html"
             ]
+          }
+        }
+      }
+    },
+    "photo-api": {
+      "root": "apps/photo-api",
+      "sourceRoot": "apps/photo-api/src",
+      "projectType": "application",
+      "prefix": "api-photos",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/photo-api",
+            "main": "apps/photo-api/src/main.ts",
+            "tsConfig": "apps/photo-api/tsconfig.app.json",
+            "assets": ["apps/photo-api/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/photo-api/src/environments/environment.ts",
+                  "with": "apps/photo-api/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "photo-api:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/photo-api/**/*.ts",
+              "apps/photo-api/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/photo-api"],
+          "options": {
+            "jestConfig": "apps/photo-api/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }

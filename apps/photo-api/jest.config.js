@@ -1,6 +1,6 @@
 module.exports = {
-  displayName: 'api-photos',
-  preset: '../../../jest.preset.js',
+  displayName: 'photo-api',
+  preset: '../../jest.preset.js',
   globals: {
     'ts-jest': {
       tsConfig: '<rootDir>/tsconfig.spec.json',
@@ -10,5 +10,5 @@ module.exports = {
     '^.+\\.[tj]s$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../../../coverage/apps/api/photos',
+  coverageDirectory: '../../coverage/apps/photo-api',
 };

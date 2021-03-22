@@ -1,17 +1,11 @@
 {
-  "extends": "../../../.eslintrc.json",
-  "ignorePatterns": [
-    "!**/*"
-  ],
+  "extends": "../../.eslintrc.json",
+  "ignorePatterns": ["!**/*"],
   "overrides": [
     {
-      "files": [
-        "*.ts"
-      ],
+      "files": ["*.ts"],
       "parserOptions": {
-        "project": [
-          "apps/api/photos/tsconfig.*?.json"
-        ]
+        "project": ["apps/api/photos/tsconfig.*?.json"]
       },
       "rules": {
         "@angular-eslint/component-selector": [
@@ -37,9 +31,7 @@
       ]
     },
     {
-      "files": [
-        "*.html"
-      ],
+      "files": ["*.html"],
       "rules": {},
       "extends": [
         "plugin:@nrwl/nx/angular-template",

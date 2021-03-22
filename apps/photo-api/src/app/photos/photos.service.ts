@@ -1,5 +1,5 @@
-import {Injectable} from '@nestjs/common';
-import {Photo, PhotoState} from './photo.model';
+import { Injectable } from '@nestjs/common';
+import { Photo, PhotoState } from './photo.model';
 
 const stateToArray = (state: PhotoState): Photo[] =>
   Object.keys(state).map((key) => state[key]);
@@ -10,7 +10,8 @@ export class PhotosService {
     ['2d335401-d65e-4059-b8f0-a4816c82086f']: {
       id: '2d335401-d65e-4059-b8f0-a4816c82086f',
       title: 'Nrwl Nx',
-      url: 'https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png',
+      url:
+        'https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png',
       likes: 0,
       dislikes: 0,
     },
