@@ -22,33 +22,6 @@
     }
   },
   "projects": {
-    "fe-photos-e2e": {
-      "root": "apps/fe/photos-e2e",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "apps/fe/photos-e2e/protractor.conf.js",
-            "devServerTarget": "photo-fe:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "photo-fe:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "apps/fe/photos-e2e/**/*.ts",
-              "apps/fe/photos-e2e/**/*.html"
-            ]
-          }
-        }
-      }
-    },
     "api-photos": {
       "root": "apps/api/photos",
       "sourceRoot": "apps/api/photos/src",
@@ -346,6 +319,33 @@
             "production": {
               "devServerTarget": "photo-fe:serve:production"
             }
+          }
+        }
+      }
+    },
+    "photo-fe-e2e": {
+      "root": "apps/photo-fe-e2e",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/photo-fe-e2e/protractor.conf.js",
+            "devServerTarget": "photo-fe:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "photo-fe:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/photo-fe-e2e/**/*.ts",
+              "apps/photo-fe-e2e/**/*.html"
+            ]
           }
         }
       }
