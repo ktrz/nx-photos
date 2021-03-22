@@ -24,6 +24,9 @@
     },
     "photo-api-model": {
       "tags": []
+    },
+    "photo-data-access": {
+      "tags": []
     }
   }
 }

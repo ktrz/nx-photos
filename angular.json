@@ -227,6 +227,46 @@
           }
         }
       }
+    },
+    "photo-data-access": {
+      "projectType": "library",
+      "root": "libs/photo/data-access",
+      "sourceRoot": "libs/photo/data-access/src",
+      "prefix": "nx-photos",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/photo/data-access/src/**/*.ts",
+              "libs/photo/data-access/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/photo/data-access"],
+          "options": {
+            "jestConfig": "libs/photo/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  },
+  "schematics": {
+    "@nrwl/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:library": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
     }
   }
 }
