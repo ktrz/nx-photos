@@ -4,6 +4,7 @@ This project is showcasing Nrwl Nx monorepo with an example of simple app for di
 
 ## Development server
 
+Run `ng serve api-photos` for a API dev server.
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
