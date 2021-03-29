@@ -5,9 +5,148 @@
     "packageManager": "yarn",
     "defaultCollection": "@nrwl/angular"
   },
-  "defaultProject": "fe-photos",
+  "defaultProject": "photo-fe",
+  "schematics": {
+    "@nrwl/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:library": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
+    }
+  },
   "projects": {
-    "fe-photos": {
+    "photo-api-model": {
+      "root": "libs/photo-api-model",
+      "sourceRoot": "libs/photo-api-model/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/photo-api-model/**/*.ts",
+              "libs/photo-api-model/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/photo-api-model"],
+          "options": {
+            "jestConfig": "libs/photo-api-model/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "photo-data-access": {
+      "projectType": "library",
+      "root": "libs/photo-data-access",
+      "sourceRoot": "libs/photo-data-access/src",
+      "prefix": "nx-photos",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/photo-data-access/**/*.ts",
+              "libs/photo-data-access/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/photo-data-access"],
+          "options": {
+            "jestConfig": "libs/photo-data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "photo-feature-list": {
+      "projectType": "library",
+      "root": "libs/photo-feature-list",
+      "sourceRoot": "libs/photo-feature-list/src",
+      "prefix": "nx-photos",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/photo-feature-list/**/*.ts",
+              "libs/photo-feature-list/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/photo-feature-list"],
+          "options": {
+            "jestConfig": "libs/photo-feature-list/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "photo-model": {
+      "projectType": "library",
+      "root": "libs/photo-model",
+      "sourceRoot": "libs/photo-model/src",
+      "prefix": "nx-photos",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/photo-model/**/*.ts",
+              "libs/photo-model/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/photo-model"],
+          "options": {
+            "jestConfig": "libs/photo-model/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "photo-ui": {
+      "projectType": "library",
+      "root": "libs/photo-ui",
+      "sourceRoot": "libs/photo-ui/src",
+      "prefix": "nx-photos",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/photo-ui/**/*.ts",
+              "libs/photo-ui/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/photo-ui"],
+          "options": {
+            "jestConfig": "libs/photo-ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "photo-fe": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -18,26 +157,26 @@
           "strict": true
         }
       },
-      "root": "apps/fe/photos",
-      "sourceRoot": "apps/fe/photos/src",
+      "root": "apps/photo-fe",
+      "sourceRoot": "apps/photo-fe/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/apps/fe/photos",
-            "index": "apps/fe/photos/src/index.html",
-            "main": "apps/fe/photos/src/main.ts",
-            "polyfills": "apps/fe/photos/src/polyfills.ts",
-            "tsConfig": "apps/fe/photos/tsconfig.app.json",
+            "outputPath": "dist/apps/photo-fe",
+            "index": "apps/photo-fe/src/index.html",
+            "main": "apps/photo-fe/src/main.ts",
+            "polyfills": "apps/photo-fe/src/polyfills.ts",
+            "tsConfig": "apps/photo-fe/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "apps/fe/photos/src/favicon.ico",
-              "apps/fe/photos/src/assets"
+              "apps/photo-fe/src/favicon.ico",
+              "apps/photo-fe/src/assets"
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
-              "apps/fe/photos/src/styles.scss"
+              "apps/photo-fe/src/styles.scss"
             ],
             "scripts": []
           },
@@ -45,8 +184,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/fe/photos/src/environments/environment.ts",
-                  "with": "apps/fe/photos/src/environments/environment.prod.ts"
+                  "replace": "apps/photo-fe/src/environments/environment.ts",
+                  "with": "apps/photo-fe/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -74,91 +213,92 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "fe-photos:build",
-            "proxyConfig": "apps/fe/photos/proxy.conf.json"
+            "browserTarget": "photo-fe:build",
+            "proxyConfig": "apps/photo-fe/proxy.conf.json"
           },
           "configurations": {
             "production": {
-              "browserTarget": "fe-photos:build:production"
+              "browserTarget": "photo-fe:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "fe-photos:build"
+            "browserTarget": "photo-fe:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "apps/fe/photos/src/test.ts",
-            "polyfills": "apps/fe/photos/src/polyfills.ts",
-            "tsConfig": "apps/fe/photos/tsconfig.spec.json",
-            "karmaConfig": "apps/fe/photos/karma.conf.js",
+            "main": "apps/photo-fe/src/test.ts",
+            "polyfills": "apps/photo-fe/src/polyfills.ts",
+            "tsConfig": "apps/photo-fe/tsconfig.spec.json",
+            "karmaConfig": "apps/photo-fe/karma.conf.js",
             "assets": [
-              "apps/fe/photos/src/favicon.ico",
-              "apps/fe/photos/src/assets"
+              "apps/photo-fe/src/favicon.ico",
+              "apps/photo-fe/src/assets"
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
-              "apps/fe/photos/src/styles.scss"
+              "apps/photo-fe/src/styles.scss"
             ],
             "scripts": []
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": [
-              "apps/fe/photos/tsconfig.app.json",
-              "apps/fe/photos/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
+            "lintFilePatterns": [
+              "apps/photo-fe/**/*.ts",
+              "apps/photo-fe/**/*.html"
+            ]
           }
         },
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "fe-photos:serve"
+            "devServerTarget": "photo-fe:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "fe-photos:serve:production"
+              "devServerTarget": "photo-fe:serve:production"
             }
           }
         }
       }
     },
-    "fe-photos-e2e": {
-      "root": "apps/fe/photos-e2e",
+    "photo-fe-e2e": {
+      "root": "apps/photo-fe-e2e",
       "projectType": "application",
       "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "apps/fe/photos-e2e/protractor.conf.js",
-            "devServerTarget": "fe-photos:serve"
+            "protractorConfig": "apps/photo-fe-e2e/protractor.conf.js",
+            "devServerTarget": "photo-fe:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "fe-photos:serve:production"
+              "devServerTarget": "photo-fe:serve:production"
             }
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": "apps/fe/photos-e2e/tsconfig.json",
-            "exclude": ["**/node_modules/**"]
+            "lintFilePatterns": [
+              "apps/photo-fe-e2e/**/*.ts",
+              "apps/photo-fe-e2e/**/*.html"
+            ]
           }
         }
       }
     },
-    "api-photos": {
-      "root": "apps/api/photos",
-      "sourceRoot": "apps/api/photos/src",
+    "photo-api": {
+      "root": "apps/photo-api",
+      "sourceRoot": "apps/photo-api/src",
       "projectType": "application",
       "prefix": "api-photos",
       "architect": {
@@ -166,10 +306,10 @@
           "builder": "@nrwl/node:build",
           "outputs": ["{options.outputPath}"],
           "options": {
-            "outputPath": "dist/apps/api/photos",
-            "main": "apps/api/photos/src/main.ts",
-            "tsConfig": "apps/api/photos/tsconfig.app.json",
-            "assets": ["apps/api/photos/src/assets"]
+            "outputPath": "dist/apps/photo-api",
+            "main": "apps/photo-api/src/main.ts",
+            "tsConfig": "apps/photo-api/tsconfig.app.json",
+            "assets": ["apps/photo-api/src/assets"]
           },
           "configurations": {
             "production": {
@@ -178,8 +318,8 @@
               "inspect": false,
               "fileReplacements": [
                 {
-                  "replace": "apps/api/photos/src/environments/environment.ts",
-                  "with": "apps/api/photos/src/environments/environment.prod.ts"
+                  "replace": "apps/photo-api/src/environments/environment.ts",
+                  "with": "apps/photo-api/src/environments/environment.prod.ts"
                 }
               ]
             }
@@ -188,41 +328,23 @@
         "serve": {
           "builder": "@nrwl/node:execute",
           "options": {
-            "buildTarget": "api-photos:build"
+            "buildTarget": "photo-api:build"
           }
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/api/photos/**/*.ts"]
+            "lintFilePatterns": [
+              "apps/photo-api/**/*.ts",
+              "apps/photo-api/**/*.html"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/api/photos"],
+          "outputs": ["coverage/apps/photo-api"],
           "options": {
-            "jestConfig": "apps/api/photos/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "photo-api": {
-      "root": "libs/photo/api",
-      "sourceRoot": "libs/photo/api/src",
-      "projectType": "library",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/photo/api/**/*.ts"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/photo/api"],
-          "options": {
-            "jestConfig": "libs/photo/api/jest.config.js",
+            "jestConfig": "apps/photo-api/jest.config.js",
             "passWithNoTests": true
           }
         }
