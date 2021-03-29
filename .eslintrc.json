@@ -38,8 +38,15 @@
               {
                 "sourceTag": "type:be",
                 "onlyDependOnLibsWithTags": ["type:api-model"]
+              },
+              {
+                "sourceTag": "scope:photo",
+                "onlyDependOnLibsWithTags": ["scope:photo"]
+              },
+              {
+                "sourceTag": "scope:profile",
+                "onlyDependOnLibsWithTags": ["scope:profile"]
               }
-
             ]
           }
         ]

@@ -10,14 +10,14 @@
   "affected": { "defaultBase": "master" },
   "npmScope": "nx-photos",
   "projects": {
-    "photo-api-model": { "tags": ["type:api-model"] },
-    "photo-data-access": { "tags": ["type:data-access"] },
-    "photo-feature-list": { "tags": ["type:feature"] },
-    "photo-model": { "tags": ["type:model"] },
-    "photo-ui": { "tags": ["type:ui"] },
-    "photo-api": { "tags": ["type:be"] },
-    "photo-fe": { "tags": ["type:app"] },
-    "photo-fe-e2e": { "tags": [], "implicitDependencies": ["photo-fe"] },
+    "photo-api-model": { "tags": ["type:api-model", "scope:photo"] },
+    "photo-data-access": { "tags": ["type:data-access", "scope:photo"] },
+    "photo-feature-list": { "tags": ["type:feature", "scope:photo"] },
+    "photo-model": { "tags": ["type:model", "scope:photo"] },
+    "photo-ui": { "tags": ["type:ui", "scope:photo"] },
+    "photo-api": { "tags": ["type:be", "scope:photo"] },
+    "photo-fe": { "tags": ["type:app", "scope:photo"] },
+    "photo-fe-e2e": { "tags": ["scope:photo"], "implicitDependencies": ["photo-fe"] },
     "profile-feature-profile": { "tags": ["type:feature", "scope:profile"] }
   }
 }
