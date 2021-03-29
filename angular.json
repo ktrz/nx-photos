@@ -374,6 +374,31 @@
           }
         }
       }
+    },
+    "user-ui": {
+      "projectType": "library",
+      "root": "libs/user/ui",
+      "sourceRoot": "libs/user/ui/src",
+      "prefix": "nx-photos",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/user/ui/src/**/*.ts",
+              "libs/user/ui/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/user/ui"],
+          "options": {
+            "jestConfig": "libs/user/ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

@@ -7,5 +7,6 @@ module.exports = {
     '<rootDir>/libs/photo/ui',
     '<rootDir>/libs/photo/feature-list',
     '<rootDir>/libs/profile/feature-profile',
+    '<rootDir>/libs/user/ui',
   ],
 };

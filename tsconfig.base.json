@@ -24,7 +24,8 @@
       "@nx-photos/photo/ui": ["libs/photo/ui/src/index.ts"],
       "@nx-photos/user/feature-profile": [
         "libs/user/feature-profile/src/index.ts"
-      ]
+      ],
+      "@nx-photos/user/ui": ["libs/user/ui/src/index.ts"]
     },
     "rootDir": "."
   },
