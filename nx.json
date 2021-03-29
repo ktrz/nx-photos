@@ -27,15 +27,15 @@
     "photo-ui": {
       "tags": ["type:ui"]
     },
+    "photo-api": {
+      "tags": ["type:be"]
+    },
     "photo-fe": {
       "tags": ["type:app"]
     },
     "photo-fe-e2e": {
       "tags": [],
       "implicitDependencies": ["photo-fe"]
-    },
-    "photo-api": {
-      "tags": ["type:be"]
     }
   }
 }
