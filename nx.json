@@ -7,35 +7,17 @@
     "nx.json": "*",
     "tsconfig.base.json": "*"
   },
-  "affected": {
-    "defaultBase": "master"
-  },
+  "affected": { "defaultBase": "master" },
   "npmScope": "nx-photos",
   "projects": {
-    "photo-api-model": {
-      "tags": ["type:api-model"]
-    },
-    "photo-data-access": {
-      "tags": ["type:data-access"]
-    },
-    "photo-feature-list": {
-      "tags": ["type:feature"]
-    },
-    "photo-model": {
-      "tags": ["type:model"]
-    },
-    "photo-ui": {
-      "tags": ["type:ui"]
-    },
-    "photo-api": {
-      "tags": ["type:be"]
-    },
-    "photo-fe": {
-      "tags": ["type:app"]
-    },
-    "photo-fe-e2e": {
-      "tags": [],
-      "implicitDependencies": ["photo-fe"]
-    }
+    "photo-api-model": { "tags": ["type:api-model"] },
+    "photo-data-access": { "tags": ["type:data-access"] },
+    "photo-feature-list": { "tags": ["type:feature"] },
+    "photo-model": { "tags": ["type:model"] },
+    "photo-ui": { "tags": ["type:ui"] },
+    "photo-api": { "tags": ["type:be"] },
+    "photo-fe": { "tags": ["type:app"] },
+    "photo-fe-e2e": { "tags": [], "implicitDependencies": ["photo-fe"] },
+    "profile-feature-profile": { "tags": ["type:feature", "scope:profile"] }
   }
 }
