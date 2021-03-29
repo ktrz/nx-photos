@@ -350,26 +350,26 @@
         }
       }
     },
-    "profile-feature-profile": {
+    "user-feature-profile": {
       "projectType": "library",
-      "root": "libs/profile/feature-profile",
-      "sourceRoot": "libs/profile/feature-profile/src",
+      "root": "libs/user/feature-profile",
+      "sourceRoot": "libs/user/feature-profile/src",
       "prefix": "nx-photos",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/profile/feature-profile/src/**/*.ts",
-              "libs/profile/feature-profile/src/**/*.html"
+              "libs/user/feature-profile/src/**/*.ts",
+              "libs/user/feature-profile/src/**/*.html"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/profile/feature-profile"],
+          "outputs": ["coverage/libs/user/feature-profile"],
           "options": {
-            "jestConfig": "libs/profile/feature-profile/jest.config.js",
+            "jestConfig": "libs/user/feature-profile/jest.config.js",
             "passWithNoTests": true
           }
         }

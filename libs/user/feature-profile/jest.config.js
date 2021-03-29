@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'profile-feature-profile',
+  displayName: 'user-feature-profile',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -14,7 +14,7 @@ module.exports = {
       },
     },
   },
-  coverageDirectory: '../../../coverage/libs/profile/feature-profile',
+  coverageDirectory: '../../../coverage/libs/user/feature-profile',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',

@@ -22,8 +22,8 @@
       "@nx-photos/photo/feature-list": ["libs/photo/feature-list/src/index.ts"],
       "@nx-photos/photo/model": ["libs/photo/model/src/index.ts"],
       "@nx-photos/photo/ui": ["libs/photo/ui/src/index.ts"],
-      "@nx-photos/profile/feature-profile": [
-        "libs/profile/feature-profile/src/index.ts"
+      "@nx-photos/user/feature-profile": [
+        "libs/user/feature-profile/src/index.ts"
       ]
     },
     "rootDir": "."

@@ -44,8 +44,8 @@
                 "onlyDependOnLibsWithTags": ["scope:photo"]
               },
               {
-                "sourceTag": "scope:profile",
-                "onlyDependOnLibsWithTags": ["scope:profile"]
+                "sourceTag": "scope:user",
+                "onlyDependOnLibsWithTags": ["scope:user"]
               }
             ]
           }
