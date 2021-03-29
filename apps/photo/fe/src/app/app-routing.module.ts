@@ -10,6 +10,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'profile',
+    loadChildren: () =>
+      import('@nx-photos/user/feature-profile').then(
+        (m) => m.UserFeatureProfileModule
+      ),
+  },
+  {
     path: '',
     pathMatch: 'full',
     redirectTo: 'list',
