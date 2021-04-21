@@ -1,6 +1,3 @@
 {
-  "root": "dist/apps/photo/fe",
-  "routes": {
-    "/**/*.html": "index.html"
-  }
+  "root": "dist/apps/photo/fe"
 }
