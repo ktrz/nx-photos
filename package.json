@@ -25,8 +25,7 @@
     "dep-graph": "nx dep-graph",
     "workspace-schematic": "nx workspace-schematic",
     "help": "nx help",
-    "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main",
-    "heroku-postbuild": "echo \"Heroku build\" && nx build"
+    "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main"
   },
   "private": true,
   "dependencies": {
