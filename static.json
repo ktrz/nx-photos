@@ -1,0 +1,11 @@
+{
+  "root": "dist/apps/photo/fe/",
+  "routes": {
+    "/**/*.html": "index.html"
+  },
+  "proxies": {
+    "/api/": {
+      "origin": "https://ktrz-nx-photos-api.herokuapp.com/api/"
+    }
+  }
+}
